@@ -18,5 +18,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('/horsefact', function () {
-    return response([], 200);
+
+    $horseFact = \App\Horsefact::inRandomOrder()->first();
+
+    return response($horseFact, 200);
 });

@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Horsefact::class, function (Faker $faker) {
     return [
-        'fact' => $faker->sentence,
+        'fact' => $faker->unique()->sentence,
         'created_at' => \Carbon\Carbon::now(),
         'updated_at' => \Carbon\Carbon::now(),
     ];

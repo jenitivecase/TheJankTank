@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Horsefact;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -25,13 +26,13 @@ class HorseFactsTest extends TestCase
      */
     public function the_endpoint_returns_a_random_selection_from_horsefacts()
     {
-        // setup
-        // seed
+        // setup == seed
+        $horseFacts = factory(Horsefact::class, 3)->create();
 
-        // action
-        // hit api endpoint (returns values from DB)
+        // action == hit api endpoint (returns values from DB)
+        $response = $this->post('/api/horsefact');
 
-        // assertion
-        // make sure that value was amongst the seeded data
+        // assertion == make sure that value was amongst the seeded data
+        $this->assertTrue($horseFacts->pluck('fact')->contains($response->json()['fact']));
     }
 }
