@@ -15,7 +15,7 @@ class CreateHorsefactsTable extends Migration
     {
         Schema::create('horsefacts', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('fact')->unique();
+            $table->text('fact');
             $table->timestamps();
         });
     }
