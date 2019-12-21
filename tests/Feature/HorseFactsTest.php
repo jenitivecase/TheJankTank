@@ -33,6 +33,6 @@ class HorseFactsTest extends TestCase
         $response = $this->post(route('get-random-horsefact'));
 
         // assertion == make sure that value was amongst the seeded data
-        $this->assertTrue($horseFacts->pluck('fact')->contains($response->json()['fact']));
+        $this->assertTrue($horseFacts->pluck('fact')->contains($response->json()['text']));
     }
 }

@@ -11,7 +11,14 @@ class HorsefactController extends Controller
     {
         $horseFact = \App\Horsefact::inRandomOrder()->first();
 
-        return response($horseFact, 200);
+        if ( ! $horseFact) {
+            return 'There are no horsefacts saved.';
+        }
+
+        return response([
+            'response_type' => 'in_channel',
+            'text' => $horseFact->fact,
+        ], 200);
     }
     
     /**
