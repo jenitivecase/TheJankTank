@@ -19,4 +19,19 @@ class HorseFactsTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    /**
+     * @test
+     */
+    public function the_endpoint_returns_a_random_selection_from_horsefacts()
+    {
+        // setup
+        // seed
+
+        // action
+        // hit api endpoint (returns values from DB)
+
+        // assertion
+        // make sure that value was amongst the seeded data
+    }
 }
