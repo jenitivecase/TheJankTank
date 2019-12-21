@@ -17,9 +17,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/horsefact', function () {
-
-    $horseFact = \App\Horsefact::inRandomOrder()->first();
-
-    return response($horseFact, 200);
-});
+Route::post('/horsefact', 'HorsefactController@getRandom');

@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class HorsefactController extends Controller
 {
+    public function getRandom()
+    {
+        $horseFact = \App\Horsefact::inRandomOrder()->first();
+
+        return response($horseFact, 200);
+    }
+    
     /**
      * Display a listing of the resource.
      *
