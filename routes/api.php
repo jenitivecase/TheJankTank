@@ -17,4 +17,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/horsefact', 'HorsefactController@getRandom');
+Route::post('/random-horsefact', 'HorsefactController@getRandom')->name('get-random-horsefact');

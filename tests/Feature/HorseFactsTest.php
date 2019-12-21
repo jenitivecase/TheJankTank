@@ -16,7 +16,7 @@ class HorseFactsTest extends TestCase
      */
     public function a_post_request_can_be_sent_to_the_horsefacts_api_endpoint()
     {
-        $response = $this->post('/api/horsefact');
+        $response = $this->post(route('get-random-horsefact'));
 
         $response->assertStatus(200);
     }
@@ -30,7 +30,7 @@ class HorseFactsTest extends TestCase
         $horseFacts = factory(Horsefact::class, 3)->create();
 
         // action == hit api endpoint (returns values from DB)
-        $response = $this->post('/api/horsefact');
+        $response = $this->post(route('get-random-horsefact'));
 
         // assertion == make sure that value was amongst the seeded data
         $this->assertTrue($horseFacts->pluck('fact')->contains($response->json()['fact']));
