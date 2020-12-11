@@ -40,6 +40,7 @@ ALLOWED_HOSTS = ['janktank', 'localhost']
 
 INSTALLED_APPS = [
     'horsefacts.apps.HorsefactsConfig',
+    'homepage.apps.HomepageConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
