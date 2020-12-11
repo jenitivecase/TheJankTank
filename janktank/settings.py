@@ -12,11 +12,12 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 
-# Load in .env module (python-dotenv)
+# Load in .env module (python-dotenv). Set the path for apache2 server.
 # https://pypi.org/project/python-dotenv/
 import os
 from dotenv import load_dotenv
-load_dotenv()
+dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+load_dotenv(dotenv_path)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,7 +32,8 @@ SECRET_KEY = 'pycl2g9^7ob$gv^2y=28#4u$uu1hrzy#qh6dwdjcxns1kk-49r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# hostname of raspberrypi
+ALLOWED_HOSTS = ['janktank']
 
 
 # Application definition
