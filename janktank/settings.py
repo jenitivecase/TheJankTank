@@ -33,7 +33,7 @@ SECRET_KEY = 'pycl2g9^7ob$gv^2y=28#4u$uu1hrzy#qh6dwdjcxns1kk-49r'
 DEBUG = True
 
 # hostname of raspberrypi
-ALLOWED_HOSTS = ['janktank']
+ALLOWED_HOSTS = ['janktank', 'localhost']
 
 
 # Application definition
